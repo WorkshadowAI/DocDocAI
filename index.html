@@ -3,76 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DocDoc AI - Your Smart Teaching Partner</title>
+    <meta name="description" content="AI-powered document processing for teachers. Try your first file FREE – CAPS-aligned and expert-approved!">
+    <title>DocDocAI - Your Smart Teaching Partner</title>
     <style>
         :root {
-            /* Color palette based on logo */
-            --teal-primary: #00a4a6;     /* Teal from logo */
-            --blue-primary: #0057a5;     /* Blue from logo */
-            --dark-navy: #003057;        /* Dark blue/navy from logo */
-            --light-gray: #f2f2f2;       /* Light background */
-            --text-dark: #333333;        /* Text color */
-            --text-light: #ffffff;       /* Light text */
-            --accent-orange: #ff6b35;    /* Accent color for highlights */
+            --primary-teal: #00a4a6;
+            --primary-blue: #0057a5;
+            --dark-navy: #003057;
+            --light-bg: #e8f1f2;
+            --highlight: #ff6b35;
+            --whatsapp-green: #25D366;
         }
-        
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light-gray);
-            color: var(--text-dark);
+            background: linear-gradient(135deg, var(--light-bg), #fff);
+            color: #333;
             text-align: center;
-            line-height: 1.6;
         }
-        
-        header {
-            background: linear-gradient(135deg, var(--teal-primary), var(--blue-primary));
-            padding: 20px;
-            color: var(--text-light);
-        }
-        
-        .logo {
-            max-width: 200px;
-            margin: 0 auto 20px;
-        }
-        
         .container {
             max-width: 800px;
             margin: 40px auto;
-            background: var(--text-light);
+            background: #fff;
             padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-top: 5px solid var(--teal-primary);
+            border: 2px solid var(--primary-teal);
         }
-        
-        h1 {
-            color: var(--dark-navy);
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-        
-        h2 {
-            color: var(--teal-primary);
-            font-size: 24px;
-            margin-top: 0;
-        }
-        
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        
-        .highlight {
-            color: var(--accent-orange);
-            font-weight: bold;
-        }
-        
+        h1 { color: var(--primary-teal); font-size: 36px; margin-bottom: 10px; }
+        h2 { color: var(--primary-blue); font-size: 24px; margin-top: 0; }
+        p { font-size: 18px; line-height: 1.6; }
+        .highlight { color: var(--highlight); font-weight: bold; }
         .cta {
             display: inline-block;
-            background-color: #25D366; /* WhatsApp green */
-            color: var(--text-light);
+            background-color: var(--whatsapp-green);
+            color: #fff;
             padding: 15px 30px;
             text-decoration: none;
             border-radius: 8px;
@@ -80,155 +46,42 @@
             margin-top: 20px;
             transition: background-color 0.3s;
         }
-        
-        .cta:hover {
-            background-color: #1ebe57;
-        }
-        
-        .service-list {
-            text-align: left;
-            margin: 20px auto;
-            max-width: 400px;
-        }
-        
-        .service-list li {
-            margin: 10px 0;
-            font-size: 16px;
-        }
-        
+        .cta:hover { background-color: #1ebe57; }
+        .service-list { text-align: left; margin: 20px auto; max-width: 400px; }
+        .service-list li { margin: 10px 0; font-size: 16px; }
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             margin: 40px auto;
-            max-width: 800px;
+            max-width: 1000px;
+            padding: 0 20px;
         }
-        
         .feature {
+            background: #fff;
             text-align: center;
             padding: 20px;
-            background-color: var(--text-light);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s;
-            border-bottom: 3px solid var(--teal-primary);
         }
-        
-        .feature:nth-child(even) {
-            border-bottom: 3px solid var(--blue-primary);
-        }
-        
-        .feature:hover {
-            transform: translateY(-10px);
-        }
-        
-        .feature img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 15px;
-        }
-        
-        .feature p {
-            font-size: 16px;
-            color: var(--text-dark);
-        }
-        
-        .trust-section {
-            background: linear-gradient(to right, rgba(0, 164, 166, 0.1), rgba(0, 87, 165, 0.1));
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            max-width: 800px;
-        }
-        
-        .trust-item {
-            margin: 20px 0;
-            text-align: left;
-            display: flex;
-            align-items: center;
-        }
-        
-        .trust-item svg {
-            stroke: var(--teal-primary);
-            margin-right: 15px;
-        }
-        
-        .trust-text {
-            flex: 1;
-        }
-        
-        .trust-text h3 {
-            color: var(--dark-navy);
-        }
-        
-        .testimonial {
-            background: rgba(0, 87, 165, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px auto;
-            text-align: left;
-            max-width: 600px;
-            border-left: 4px solid var(--blue-primary);
-        }
-        
-        .contact-section {
-            background: var(--text-light);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin: 40px auto;
-            max-width: 800px;
-            border-top: 5px solid var(--blue-primary);
-        }
-        
-        .contact-item {
-            margin: 15px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .contact-item svg {
-            stroke: var(--teal-primary);
-            margin-right: 10px;
-        }
-        
-        .contact-item a {
-            color: var(--blue-primary);
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background: var(--dark-navy);
-            color: var(--text-light);
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-        
-        .about-founder {
-            background: rgba(0, 164, 166, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px auto;
-            text-align: left;
-            max-width: 600px;
-            border-right: 4px solid var(--teal-primary);
-        }
+        .feature:hover { transform: translateY(-10px); }
+        .feature img { width: 80px; height: 80px; margin-bottom: 15px; }
+        .feature p { font-size: 16px; color: #555; }
+        .section { background: rgba(0, 164, 166, 0.1); padding: 40px 20px; margin: 20px 0; border-radius: 12px; }
+        .contact a { color: var(--primary-blue); text-decoration: none; margin: 0 10px; }
+        .contact a:hover { text-decoration: underline; }
+        .footer { background: var(--dark-navy); color: #fff; padding: 20px; font-size: 14px; }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="DocDoc AI Consulting Logo" class="logo">
-    </header>
-    
+    <!-- Logo Header -->
+    <div style="margin: 20px auto; max-width: 200px;">
+        <img src="images/logo2.jpg" alt="DocDocAI Logo" style="width: 100%; height: auto;">
+    </div>
+
     <div class="container">
-        <h1>DocDoc AI</h1>
+        <h1>DocDocAI</h1>
         <h2>Your Smart Teaching Partner</h2>
         <p>Struggling with lesson plans or activity sheets? Let our <span class="highlight">AI magic</span> transform your documents into polished, CAPS-aligned masterpieces—checked by experts for quality!</p>
         <p><span class="highlight">First document FREE!</span> Then just R15 per page.</p>
@@ -241,95 +94,59 @@
             </ul>
         </div>
         <p><strong>Join the first 50 teachers</strong> to get a FULL MONTH of free document processing!</p>
-        <a href="https://wa.me/2766282696?text=Hi%20DocDocAI!%20I%20want%20to%20try%20the%20free%20document%20service." class="cta" target="_blank">📱 WhatsApp Us Now!</a>
+        <a href="https://wa.me/27662282696?text=Hi%20DocDocAI!%20I%20want%20to%20try%20the%20free%20document%20service" class="cta" target="_blank">📱 WhatsApp Us Now!</a>
     </div>
-    
-    <!-- Features Grid with SVG Icons -->
+
     <div class="features">
         <div class="feature">
-            <img src="images/upload-icon.svg" alt="Upload Icon">
+            <img src="images/upload-icon.svg" alt="Icon representing document upload">
             <p>Upload your document via WhatsApp</p>
         </div>
         <div class="feature">
-            <img src="images/artificial-intelligence-ai-icon.svg" alt="AI Icon">
+            <img src="images/artificial-intelligence-ai-icon.svg" alt="Icon representing AI processing">
             <p>Our AI processes it in minutes</p>
         </div>
         <div class="feature">
-            <img src="images/businesswoman-office-icon.svg" alt="Expert Icon">
+            <img src="images/businesswoman-office-icon.svg" alt="Icon representing expert review">
             <p>Experts ensure top quality</p>
         </div>
         <div class="feature">
-            <img src="images/files-download-icon.svg" alt="Download Icon">
+            <img src="images/files-download-icon.svg" alt="Icon representing document download">
             <p>Receive it ready to print</p>
         </div>
         <div class="feature">
-            <img src="images/open-book-hand-pointing-icon.svg" alt="CAPS Icon">
+            <img src="images/open-book-hand-pointing-icon.svg" alt="Icon representing CAPS compliance">
             <p>CAPS compliance assured</p>
         </div>
         <div class="feature">
-            <img src="images/whatsapp-icon.svg" alt="WhatsApp Icon">
+            <img src="images/whatsapp-icon.svg" alt="Icon representing WhatsApp communication">
             <p>Easy WhatsApp access</p>
         </div>
     </div>
-    
-    <!-- Trust & Security Section -->
-    <div class="trust-section">
-        <h2>Your Security & Privacy Matter</h2>
-        <div class="trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            <div class="trust-text">
-                <h3>Secure Document Handling</h3>
-                <p>Your teaching materials are encrypted and never shared with third parties. All documents are deleted after processing unless you request storage.</p>
-            </div>
-        </div>
-        <div class="trust-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            <div class="trust-text">
-                <h3>POPIA Compliant</h3>
-                <p>We fully comply with South Africa's Protection of Personal Information Act to ensure your data remains protected.</p>
-            </div>
-        </div>
+
+    <div class="section">
+        <h2>About DocDocAI</h2>
+        <p>Created by a teacher with <strong>4 years of experience in KZN</strong>, DocDocAI combines real-world classroom insights with cutting-edge AI to save you time and ensure quality.</p>
     </div>
-    
-    <!-- Testimonial -->
-    <div class="testimonial">
-        <p>"DocDoc AI has been a game-changer for my Grade 5 class. The activity sheets are always CAPS-aligned and save me hours of planning time each week. Highly recommended!"</p>
-        <p><strong>- Sarah M., Grade 5 Teacher, Durban</strong></p>
+
+    <div class="section">
+        <h2>Your Privacy Matters</h2>
+        <p>We’re compliant with <strong>POPIA</strong> (Protection of Personal Information Act). Your documents are securely processed, reviewed by our team, and deleted after delivery—keeping your data safe.</p>
     </div>
-    
-    <!-- About the Founder -->
-    <div class="about-founder">
-        <h2>About Us</h2>
-        <p>DocDoc AI was created by a KZN teacher with 4 years of experience in the classroom. Having faced the challenges of document preparation firsthand, our founder built this service to help fellow teachers save time while maintaining quality.</p>
-        <p>Our team combines teaching expertise with AI technology to deliver documents that truly meet South African curriculum requirements.</p>
+
+    <div class="section">
+        <h2>What Teachers Say</h2>
+        <p><em>"DocDocAI turned my rough lesson plans into professional resources in no time. The free first file sold me!"</em> - Sarah M., Grade 8 Teacher</p>
     </div>
-    
-    <!-- Contact Section -->
-    <div class="contact-section">
-        <h2>Contact Us</h2>
-        <div class="contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <a href="mailto:8experiment8@gmail.com">8experiment8@gmail.com</a>
-        </div>
-        <div class="contact-item">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <a href="tel:+2766282696">066 282 696</a> (WhatsApp & Calls)
-        </div>
+
+    <div class="section contact">
+        <h2>Get in Touch</h2>
+        <p>Email: <a href="mailto:8experiment8@gmail.com">8experiment8@gmail.com</a></p>
+        <p>WhatsApp/Call: <a href="https://wa.me/27662282696">+27662282696</a></p>
     </div>
-    
-    <footer>
-        <p>&copy; 2025 DocDoc AI Consulting. All rights reserved.</p>
-        <p>Helping South African teachers create quality educational materials since 2025.</p>
-    </footer>
+
+    <div class="footer">
+        <p>© 2025 DocDocAI. All rights reserved.</p>
+    </div>
 </body>
 </html>
