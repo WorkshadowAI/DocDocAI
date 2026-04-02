@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your Request - DocDocAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .funnel-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            text-align: left;
+            border-top: 5px solid var(--primary-teal);
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        .form-group.small {
+            flex: 0.3;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            font-size: 14px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 15px;
+            background-color: #fcfcfc;
+        }
+        .form-group input:focus {
+            border-color: var(--primary-teal);
+            outline: none;
+        }
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--whatsapp-green), #1ebe57);
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        #whatsapp-reveal {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .loading-text {
+            display: none;
+            text-align: center;
+            color: var(--primary-teal);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="funnel-container">
+        <div id="form-section">
+            <h2 style="text-align: center; color: var(--primary-teal); margin-bottom: 5px;">DocDocAI Intake Portal</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: #555;">Register your details below to claim your free document and open a direct channel to our educators.</p>
+            
+            <form id="lead-form">
+                
+                <div class="form-row">
+                    <div class="form-group small">
+                        <label for="title">Title</label>
+                        <select id="title" name="title" required>
+                            <option value="">Select...</option>
+                            <option value="Mr">Mr.</option>
+                            <option value="Mrs">Mrs.</option>
+                            <option value="Ms">Ms.</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Dr">Dr.</option>
+                        </select>
+                    </div>
+                    <div class="form-group small">
+                        <label for="initials">Initials</label>
+                        <input type="text" id="initials" name="initials" placeholder="e.g. M.J." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Surname</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">WhatsApp Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="071 234 5678" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjects">Subject(s)</label>
+                    <input type="text" id="subjects" name="subjects" list="subject-list" placeholder="Start typing your subject..." required>
+                    <span class="help-text">You can type multiple subjects separated by commas.</span>
+                    <datalist id="subject-list">
+                        <option value="English FAL">
+                        <option value="English HL">
+                        <option value="Business Studies">
+                        <option value="Geography">
+                        <option value="Mathematics">
+                        <option value="Mathematical Literacy">
+                        <option value="Physical Sciences">
+                        <option value="Life Sciences">
+                        <option value="History">
+                        <option value="Tourism">
+                        <option value="isiZulu HL/FAL">
+                        <option value="Life Orientation">
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="documents">Desired Document Type</label>
+                    <select id="documents" name="documents" required>
+                        <option value="">Select what you need today...</option>
+                        <option value="Lesson Plan">Lesson Plan</option>
+                        <option value="Diagnostic Analysis">Diagnostic Analysis</option>
+                        <option value="Activity Sheet / Assessment">Activity Sheet / Assessment</option>
+                        <option value="Moderation File Support">Moderation File Support</option>
+                        <option value="Other/Custom">Other (Specify in WhatsApp)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Register & Unlock WhatsApp</button>
+                <p class="loading-text" id="loading">Syncing your profile...</p>
+            </form>
+        </div>
+
+        <div id="whatsapp-reveal">
+            <h2 style="color: var(--success-green);">✅ Profile Synced Successfully</h2>
+            <p style="font-size: 16px; color: #555;">Your registration is complete. Click below to open WhatsApp and claim your free document.</p>
+            <a href="https://wa.me/27662282696" class="submit-btn" style="display: inline-block; text-decoration: none; margin-top: 15px;" target="_blank">📱 Continue to WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        // Live Google Apps Script Connection
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxPT77JUYWXGgoKxuLnmh1BHvm9Enb7eMmFn3QxN3Pl2zBqz8DUZtiUTWK1oTjlXGyqSQ/exec'; 
+        
+        const form = document.getElementById('lead-form');
+        const formSection = document.getElementById('form-section');
+        const whatsappReveal = document.getElementById('whatsapp-reveal');
+        const submitBtn = document.querySelector('.submit-btn');
+        const loadingText = document.getElementById('loading');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // UI Update: Show loading state
+            submitBtn.style.display = 'none';
+            loadingText.style.display = 'block';
+
+            // Send data to Google Sheets silently
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    // UI Update: Hide form, reveal WhatsApp button
+                    formSection.style.display = 'none';
+                    whatsappReveal.style.display = 'block';
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert("There was a slight connection issue, but you can still proceed to WhatsApp!");
+                    formSection.style.display = 'none';
+                    whatsappReveal.style.display = 'block';
+                });
+        });
+    </script>
+</body>
+</html>
