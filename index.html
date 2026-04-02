@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-powered document processing for South African teachers. CAPS-aligned lesson plans, activity sheets & more. First document FREE! Professional quality guaranteed.">
+    <title>DocDocAI - AI-Powered Teaching Documents | CAPS Aligned</title>
+    <meta name="description" content="AI-powered document processing for South African teachers. CAPS-aligned lesson plans, activity sheets & more. First document FREE!">
     <meta name="keywords" content="AI lesson plans, CAPS aligned, South African teachers, DocDocAI, document processing, teaching resources">
     <meta name="author" content="DocDocAI">
-    <meta property="og:title" content="DocDocAI - Your Smart Teaching Partner">
-    <meta property="og:description" content="Transform your teaching documents with AI. CAPS-aligned, expert-reviewed, first document FREE!">
-    <meta property="og:type" content="website">
-    <title>DocDocAI - AI-Powered Teaching Documents | CAPS Aligned | South Africa</title>
     
-    <!-- Schema.org markup for Google -->
+    <link rel="stylesheet" href="styles.css">
+    
     <script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -26,386 +24,18 @@
         "addressRegion": "KwaZulu-Natal",
         "addressCountry": "ZA"
       },
-      "priceRange": "R35-R220",
       "serviceArea": "South Africa"
     }
     </script>
-    
-    <style>
-        :root {
-            --primary-teal: #00a4a6;
-            --primary-blue: #0057a5;
-            --dark-navy: #003057;
-            --light-bg: #e8f1f2;
-            --highlight: #ff6b35;
-            --whatsapp-green: #25D366;
-            --success-green: #10b981;
-            --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-        
-        * {
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, var(--light-bg), #fff);
-            color: #333;
-            text-align: center;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--card-shadow);
-            border: 2px solid var(--primary-teal);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-teal), var(--primary-blue));
-        }
-        
-        h1 { 
-            color: var(--primary-teal); 
-            font-size: 42px; 
-            margin-bottom: 15px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        h2 { 
-            color: var(--primary-blue); 
-            font-size: 28px; 
-            margin: 30px 0 20px 0;
-            font-weight: 600;
-        }
-        
-        p { 
-            font-size: 18px; 
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-        
-        .highlight { 
-            color: var(--highlight); 
-            font-weight: bold;
-            background: linear-gradient(120deg, transparent 0%, rgba(255, 107, 53, 0.1) 50%, transparent 100%);
-            padding: 2px 6px;
-            border-radius: 4px;
-        }
-        
-        .stats-banner {
-            background: linear-gradient(135deg, var(--primary-teal), var(--primary-blue));
-            color: white;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 30px 0;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 32px;
-            font-weight: bold;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        /* Enhanced Pricing Section */
-        .pricing-section {
-            margin: 50px 0;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, rgba(0, 164, 166, 0.05), rgba(0, 87, 165, 0.05));
-            border-radius: 20px;
-            border: 1px solid rgba(0, 164, 166, 0.2);
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .pricing-card {
-            background: white;
-            padding: 30px 25px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            border: 2px solid transparent;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-            border-color: var(--primary-teal);
-        }
-        
-        .pricing-card.popular {
-            border-color: var(--highlight);
-            transform: scale(1.05);
-        }
-        
-        .popular-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: var(--highlight);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-        
-        .price {
-            font-size: 36px;
-            font-weight: bold;
-            color: var(--primary-teal);
-            margin: 15px 0;
-        }
-        
-        .price-subtitle {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-        
-        .features-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid #eee;
-            color: #555;
-        }
-        
-        .features-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .cta {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--whatsapp-green), #1ebe57);
-            color: #fff;
-            padding: 18px 35px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: 600;
-            margin: 25px 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-        }
-        
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta:hover::before {
-            left: 100%;
-        }
-        
-        .service-list { 
-            text-align: left; 
-            margin: 25px auto; 
-            max-width: 400px;
-            background: rgba(0, 164, 166, 0.05);
-            padding: 25px;
-            border-radius: 15px;
-            border-left: 4px solid var(--primary-teal);
-        }
-        
-        .service-list li { 
-            margin: 12px 0; 
-            font-size: 16px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(0, 164, 166, 0.1);
-        }
-        
-        .service-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 50px auto;
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-        
-        .feature {
-            background: #fff;
-            text-align: center;
-            padding: 30px 20px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 164, 166, 0.1);
-        }
-        
-        .feature:hover { 
-            transform: translateY(-8px);
-            box-shadow: var(--card-shadow-hover);
-        }
-        
-        .feature img { 
-            width: 80px; 
-            height: 80px; 
-            margin-bottom: 20px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-        }
-        
-        .feature p { 
-            font-size: 16px; 
-            color: #555;
-            font-weight: 500;
-        }
-        
-        .section { 
-            background: linear-gradient(135deg, rgba(0, 164, 166, 0.08), rgba(0, 87, 165, 0.08)); 
-            padding: 50px 30px; 
-            margin: 40px 0; 
-            border-radius: 20px;
-            border: 1px solid rgba(0, 164, 166, 0.15);
-            position: relative;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--card-shadow);
-            margin: 20px auto;
-            max-width: 600px;
-            border-left: 4px solid var(--primary-teal);
-        }
-        
-        .testimonial em {
-            font-size: 18px;
-            color: #555;
-            font-style: italic;
-        }
-        
-        .testimonial-author {
-            margin-top: 15px;
-            font-weight: bold;
-            color: var(--primary-blue);
-        }
-        
-        .contact a { 
-            color: var(--primary-blue); 
-            text-decoration: none; 
-            margin: 0 15px;
-            font-weight: 600;
-            padding: 8px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact a:hover { 
-            background: rgba(0, 87, 165, 0.1);
-            transform: translateY(-1px);
-        }
-        
-        .footer { 
-            background: linear-gradient(135deg, var(--dark-navy), var(--primary-blue));
-            color: #fff; 
-            padding: 30px; 
-            font-size: 14px;
-            margin-top: 50px;
-        }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .container {
-                margin: 20px;
-                padding: 25px;
-            }
-            
-            h1 { font-size: 32px; }
-            h2 { font-size: 24px; }
-            
-            .stats-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .pricing-card.popular {
-                transform: none;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Scroll animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-    </style>
 </head>
 <body>
-    <!-- Logo Header -->
+
+    <nav style="background: var(--dark-navy); padding: 15px 0; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; position: sticky; top: 0; z-index: 1000;">
+        <a href="index.html" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 16px;">Home</a>
+        <a href="services.html" style="color: white; text-decoration: none; margin: 0 15px; font-weight: bold; font-size: 16px;">Services & Pricing</a>
+        <a href="funnel.html" style="background: var(--whatsapp-green); color: white; text-decoration: none; padding: 8px 15px; border-radius: 20px; margin-left: 15px; font-weight: bold; font-size: 14px; box-shadow: 0 2px 5px rgba(37,211,102,0.4);">Start Request</a>
+    </nav>
+
     <div style="margin: 30px auto; max-width: 220px;">
         <img src="images/logo2.jpg" alt="DocDocAI Logo - AI-powered document processing for teachers" style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
     </div>
@@ -413,7 +43,8 @@
     <div class="container fade-in">
         <h1>DocDocAI</h1>
         <h2>Your Smart Teaching Partner</h2>
-        <p>Struggling with lesson plans or activity sheets? Let our <span class="highlight">AI magic</span> transform your documents into polished, CAPS-aligned masterpieces—checked by experts for quality!</p>
+        <p>Struggling with administrative paperwork? Let our <span class="highlight">AI tools</span> transform your requests into polished, CAPS-aligned masterpieces—checked by education experts.</p>
+        <p><span class="highlight">Your first document is 100% FREE!</span></p>
         
         <div class="stats-banner">
             <div class="stat">
@@ -430,137 +61,64 @@
             </div>
         </div>
         
-        <div class="service-list">
-            <ul>
-                <li>📝 Professional Lesson Plans</li>
-                <li>📊 Subject-Specific Analyses</li>
-                <li>🚀 Improvement Plans & Strategies</li>
-                <li>🎯 Activity Sheets with Complete Solutions</li>
-            </ul>
-        </div>
+        <p><strong>🎉 Limited Time:</strong> Join the first 50 teachers this month to get exclusive early access benefits!</p>
         
-        <p><strong>🎉 Limited Time:</strong> Join the first 50 teachers to get exclusive early access benefits!</p>
-        <a href="https://wa.me/27662282696?text=Hi%20DocDocAI!%20I%20want%20to%20try%20your%20document%20service" class="cta" target="_blank">📱 Start Your Free Document</a>
-    </div>
-
-    <!-- Enhanced Pricing Section -->
-    <div class="pricing-section">
-        <h2>💸 Simple, Transparent Pricing</h2>
-        <p style="font-size: 20px; color: #666; margin-bottom: 0;">Choose the plan that works for your teaching needs</p>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3 style="color: var(--primary-teal); margin-top: 0;">Starter</h3>
-                <div class="price">R35</div>
-                <div class="price-subtitle">Per document (up to 4 pages)</div>
-                <ul class="features-list">
-                    <li>✅ CAPS-aligned content</li>
-                    <li>✅ Expert review included</li>
-                    <li>✅ 24-hour turnaround</li>
-                    <li>✅ WhatsApp support</li>
-                </ul>
-            </div>
-            
-            <div class="pricing-card popular">
-                <div class="popular-badge">Most Popular</div>
-                <h3 style="color: var(--highlight); margin-top: 0;">Standard</h3>
-                <div class="price">R50</div>
-                <div class="price-subtitle">Per document (up to 9 pages)</div>
-                <ul class="features-list">
-                    <li>✅ Everything in Starter</li>
-                    <li>✅ Extended content length</li>
-                    <li>✅ Priority processing</li>
-                    <li>✅ Multiple format options</li>
-                </ul>
-            </div>
-            
-            <div class="pricing-card">
-                <h3 style="color: var(--primary-blue); margin-top: 0;">Enterprise</h3>
-                <div class="price">Custom</div>
-                <div class="price-subtitle">10+ pages - Negotiable pricing</div>
-                <ul class="features-list">
-                    <li>✅ Custom pricing based on complexity</li>
-                    <li>✅ Bulk document discounts</li>
-                    <li>✅ Dedicated support</li>
-                    <li>✅ Same-day turnaround</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div style="margin-top: 40px; padding: 30px; background: linear-gradient(135deg, var(--success-green), #059669); border-radius: 15px; color: white;">
-            <h3 style="margin-top: 0; color: white;">🔄 Unlimited Monthly Plan</h3>
-            <div style="font-size: 32px; font-weight: bold; margin: 15px 0;">R220/month</div>
-            <p style="margin-bottom: 0; font-size: 18px;">Unlimited document editing & creation. Perfect for busy teachers who need regular content support.</p>
+        <div style="margin: 30px 0;">
+            <a href="funnel.html" class="cta">📱 Claim Your Free Document</a>
+            <br><br><br>
+            <a href="services.html" style="color: var(--primary-blue); font-weight: bold; text-decoration: none; font-size: 16px;">View Services & Pricing &rarr;</a>
         </div>
     </div>
 
-    <div class="features">
-        <div class="feature">
-            <img src="images/upload-icon.svg" alt="Document upload process">
-            <p><strong>1. Upload via WhatsApp</strong><br>Send your document directly through our WhatsApp service</p>
-        </div>
-        <div class="feature">
-            <img src="images/artificial-intelligence-ai-icon.svg" alt="AI processing technology">
-            <p><strong>2. AI Processing</strong><br>Our advanced AI analyzes and enhances your content in minutes</p>
-        </div>
-        <div class="feature">
-            <img src="images/businesswoman-office-icon.svg" alt="Expert quality review">
-            <p><strong>3. Expert Review</strong><br>Qualified educators ensure top-quality, CAPS-compliant results</p>
-        </div>
-        <div class="feature">
-            <img src="images/files-download-icon.svg" alt="Document delivery">
-            <p><strong>4. Ready to Use</strong><br>Receive professionally formatted documents ready for classroom use</p>
-        </div>
-        <div class="feature">
-            <img src="images/open-book-hand-pointing-icon.svg" alt="CAPS compliance assurance">
-            <p><strong>5. CAPS Compliance</strong><br>All content aligned with South African curriculum standards</p>
-        </div>
-        <div class="feature">
-            <img src="images/whatsapp-icon.svg" alt="WhatsApp communication">
-            <p><strong>6. Seamless Communication</strong><br>Easy WhatsApp-based service with quick response times</p>
-        </div>
+    <div class="section fade-in" style="max-width: 800px; margin: 40px auto; text-align: left; border-left: 4px solid var(--primary-teal); background: white; padding: 35px; border-radius: 15px; box-shadow: var(--card-shadow);">
+        <h2 style="text-align: center; margin-top: 0;">👨‍🏫 Built by Educators, for Educators</h2>
+        <p>Created by a KZN Educator with <strong>6 years of classroom experience</strong> and Departmental Head oversight, DocDocAI is built specifically for the realities of the South African education system. We specialize in producing rigorous documentation for subjects demanding heavy preparation, including <strong>English FAL, Business Studies, and Geography</strong>.</p>
+        <p>Backed by a dedicated technical engineering teammate, our infrastructure ensures you receive accurate, expertly formatted, and CAPS-aligned documents without the wait. We understand the daily administrative burden, and we have engineered a reliable solution to reclaim your time.</p>
     </div>
 
-    <div class="section">
-        <h2>👨‍🏫 About DocDocAI</h2>
-        <p>Created by a teacher with <strong>4 years of classroom experience in KwaZulu-Natal</strong>, DocDocAI combines authentic teaching insights with cutting-edge AI technology. We understand the daily challenges teachers face and have built a solution that actually works in real classrooms.</p>
-        <p><strong>Our mission:</strong> Save teachers time while maintaining the highest educational standards.</p>
+    <div class="section fade-in" style="max-width: 800px; margin: 40px auto; text-align: left; background: linear-gradient(135deg, rgba(0, 164, 166, 0.05), rgba(16, 185, 129, 0.05)); border: 1px solid rgba(16, 185, 129, 0.2);">
+        <h2 style="color: var(--success-green); margin-top: 0;">🔒 POPIA Compliant & Secure</h2>
+        <p>Your privacy is absolute. Your documents are securely processed using encrypted channels, reviewed strictly by our qualified educational team, and permanently deleted from our servers after delivery. Your teaching intellectual property and student data remain completely confidential.</p>
     </div>
 
-    <div class="section">
-        <h2>🔒 Your Privacy & Security</h2>
-        <p>We're fully compliant with <strong>POPIA</strong> (Protection of Personal Information Act). Your documents are securely processed using encrypted channels, reviewed by our qualified team, and permanently deleted after delivery. Your teaching content and student data remain completely confidential.</p>
-    </div>
-
-    <div class="section">
-        <h2>⭐ What Teachers Are Saying</h2>
+    <div class="section fade-in" style="max-width: 1000px; margin: 40px auto; background: transparent; border: none; box-shadow: none;">
+        <h2 style="text-align: center;">⭐ Trusted by South African Teachers</h2>
         <div class="testimonial">
             <em>"DocDocAI turned my rough lesson plans into professional resources in no time. The CAPS alignment is spot-on, and the quality exceeded my expectations. The free first file convinced me to become a regular user!"</em>
-            <div class="testimonial-author">- Sarah M., Grade 8 Mathematics Teacher, Durban</div>
+            <div class="testimonial-author">- Sarah M., Grade 8 Teacher, Durban</div>
         </div>
         <div class="testimonial">
-            <em>"As a new teacher, DocDocAI has been a lifesaver. The expert review gives me confidence that my materials meet professional standards. Worth every rand!"</em>
-            <div class="testimonial-author">- Michael K., Grade 6 Natural Sciences Teacher, Pietermaritzburg</div>
+            <em>"As a teacher managing high-volume classes, DocDocAI has been a lifesaver. The expert review gives me absolute confidence that my moderation materials meet professional standards. Worth every rand!"</em>
+            <div class="testimonial-author">- Michael K., FET Phase Teacher, Pietermaritzburg</div>
         </div>
     </div>
 
-    <div class="section contact">
-        <h2>📞 Get in Touch</h2>
-        <p style="font-size: 20px; margin-bottom: 30px;">Ready to transform your teaching materials? Contact us today!</p>
-        <p>
-            <a href="mailto:8experiment8@gmail.com">📧 8experiment8@gmail.com</a>
-            <a href="https://wa.me/27662282696">📱 WhatsApp: +27 66 228 2696</a>
-        </p>
-        <a href="https://wa.me/27662282696?text=Hi%20DocDocAI!%20I%20want%20to%20learn%20more%20about%20your%20pricing%20and%20services" class="cta" target="_blank">Get Started Today</a>
+    <div class="section contact fade-in" style="max-width: 600px; margin: 40px auto; background: white; box-shadow: var(--card-shadow);">
+        <h2 style="margin-top: 0;">📞 General Inquiries</h2>
+        <p style="font-size: 16px; margin-bottom: 25px;">Have questions before starting your request? Reach out to our team directly.</p>
+        
+        <table style="width: 100%; margin: 0 auto; text-align: left; border-collapse: collapse;">
+            <tr>
+                <td style="padding: 12px; font-weight: bold; color: var(--primary-teal); border-bottom: 1px solid #eee;">Email:</td>
+                <td style="padding: 12px; border-bottom: 1px solid #eee;"><a href="mailto:8experiment8@gmail.com">8experiment8@gmail.com</a></td>
+            </tr>
+            <tr>
+                <td style="padding: 12px; font-weight: bold; color: var(--primary-teal);">WhatsApp:</td>
+                <td style="padding: 12px;"><a href="https://wa.me/27662282696">+27 66 228 2696</a></td>
+            </tr>
+        </table>
+        
+        <div style="margin-top: 35px;">
+            <a href="funnel.html" class="cta">Start Your Request Today</a>
+        </div>
     </div>
 
     <div class="footer">
-        <p><strong>© 2025 DocDocAI AI Consulting.</strong> Empowering South African educators with AI-enhanced teaching resources.</p>
-        <p style="margin-top: 15px; font-size: 12px; opacity: 0.8;">Serving teachers across South Africa | CAPS-Compliant | POPIA-Compliant | Expert-Reviewed</p>
+        <p><strong>© 2026 DocDocAI AI Consulting.</strong></p>
+        <p style="margin-top: 10px; font-size: 13px; opacity: 0.8;">Serving teachers across South Africa | CAPS-Compliant | POPIA-Compliant | Expert-Reviewed</p>
     </div>
 
     <script>
-        // Simple scroll animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -574,8 +132,7 @@
             });
         }, observerOptions);
 
-        // Observe all sections
-        document.querySelectorAll('.section, .features, .pricing-section').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
     </script>
